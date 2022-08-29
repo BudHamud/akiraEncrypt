@@ -179,9 +179,10 @@ button:hover {
 .anim {
     display: block;
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
-    background-color: #D00;
+    width: 220px;
+    background-color: white;
     padding: 5px;
     border-radius: 10px;
     font-family: 'Bungee', cursive;
@@ -232,9 +233,9 @@ footer {
         width: 250px;
         height: 150px;
     }
-    /* .anim {
-        position: relative;
-    } */
+    .anim {
+
+    }
     .akimode {
         height: 15px;
     }
