@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(img/back3.jpeg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:0% 40%;
+    backdrop-filter: brightness(0%);
+    height: 100vh
+}
+
+header {
+    border: solid 2px;
+    font-family: 'Bungee', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    margin-bottom: 35px;
+    background-color: black;
+    color: white;
+}
+
+header img {
+    width: 120px;
+    margin-right: 50px;
+}
+
+main {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 74vh;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 500px;
+    height: 400px;
+    color: white;
+    border: solid 2px white;
+    background-color: black;
+    padding: 15px;
+}
+
+#show {
+    width: 200px;
+    height: 460px;
+    border: solid 2px;
+    padding: 15px;
+    background-color: black;
+    border: solid 2px white;
+    color: white;
+}
+
+.back {
+    animation-fill-mode: forwards;
+    animation-name: smoothie;
+    animation-duration: 1s;
+}
+
+@keyframes smoothie {
+    0% {backdrop-filter: brightness(0%);background-color: black;}
+    100% {backdrop-filter: brightness(90%); background-color: rgb(213, 22, 66);}
+}
+
+.red {
+    animation-fill-mode: forwards;
+    animation-name: smooth;
+    animation-duration: 1s;
+}
+
+@keyframes smooth {
+    100% {background-color: red; color: black;}
+}
+
+.black {
+    animation-fill-mode: forwards;
+    animation-name: smoothb;
+    animation-duration: 1s; 
+}
+
+@keyframes smoothb {
+    0% {background-color: red; color: black;}
+    100% {background-color: black; color: white;}
+}
+
+.backb {
+    animation-fill-mode: forwards;
+    animation-name: smoothieb;
+    animation-duration: 1s;
+    background-color: black;
+}
+
+@keyframes smoothieb {
+    0% {backdrop-filter: brightness(90%); background-color: rgb(213, 22, 66);}
+    100% {backdrop-filter: brightness(0%); background-color: black;}
+}
+
+button {
+    padding: 0 10px;
+    border: solid 2px;
+    background-color: black;
+    color: white;
+}
+
+article button {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100px;
+}
+
+button:hover {
+    background-color: hsl(0, 50%, 50%);
+    cursor: pointer;
+}
+
+#mode {
+    border-radius: 20px;
+    font-family: 'Bungee', cursive;
+    position: relative;
+    bottom: 18.5px;
+}
+
+.move {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    0% {position: relative; left: 0px;}
+    100% {position: relative; left: 30px;}
+}
+
+.backbtn {
+    animation-name: backbtn;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes backbtn {
+    0% {position: relative; left: 30px;}
+    100% {position: relative; left: 0px;}
+}
+
+.akimode {
+    border: solid 2px white;
+    border-radius: 20px;
+    position: relative;
+    width: 100px;
+    height: 35px;
+    background: linear-gradient(40deg, black, #D00)
+}
+
+.copyblock {
+    display: flex;
+    flex-direction: column;
+}
+
+.copyblock button {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100px;
+}
+
+.anim {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #D00;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Bungee', cursive;
+    animation-name: toast;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes toast {
+    0% {opacity: 0;}
+    50% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+
+footer {
+    margin-top: 35px;
+    font-family: 'Bungee', cursive;
+    border: solid 2px;
+    background-color: black;
+    color: white;
+}
+/* Hacer menú hamburguesa con esta clase */
+.icon {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        display: none;
+    }
+    .icon {
+        display: block;
+    }
+    main {
+        flex-direction: column;
+    }
+    textarea, #show {
+        width: 250px;
+        height: 150px;
+    }
+    .anim {
+        position: relative;
+    }
+}

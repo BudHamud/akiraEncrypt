@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/logo ico.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/d6cbf412fd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Encriptador | Alura Challenge</title>
+  </head>
+  <body>
+    <header>
+        <img src="img/logov2.png" alt="" />
+        <h3>Akira あきら Encrypt</h3>
+
+        <div class="akimode">
+          <button id="mode" onclick="cambiar()">Akira</button>
+        </div>
+    </header>
+    <main>
+      <article>
+        <textarea name="text" id="text"></textarea>
+        <button onclick="encript()">Encriptar</button>
+        <button onclick="des()">Desencriptar</button>
+      </article>
+      <div class="copyblock">
+        <textarea disabled id="show"></textarea>
+        <button onclick="copy()">
+          Copiar <i class="fa-solid fa-copy"></i>
+        </button>
+      </div>
+      <div id="toast"></div>
+    </main>
+    <footer>
+      <p>&copy;Akira あきら Encrypt</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
