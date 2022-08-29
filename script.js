@@ -2,7 +2,8 @@ let show = document.getElementById("show")
 let text = document.getElementById("text")
 let btn = document.getElementById("mode")
 let toast = document.getElementById("toast")
-let count = false
+let darkMode = false
+let menuMode = false
 const soloLetras ='^[a-z !ñ]+$';
 
 function borrar() {
@@ -10,7 +11,7 @@ function borrar() {
 }
 
 function cambiar() {
-    if (count === false) {
+    if (darkMode === false) {
         document.body.classList.add("back")
         document.body.classList.remove("backb")
         document.querySelector("footer").classList.add("red")
@@ -19,7 +20,7 @@ function cambiar() {
         document.querySelector("header").classList.remove("black")
         btn.classList.add("move")
         btn.classList.remove("backbtn")
-        count = true
+        darkMode = true
     } else {
         document.body.classList.remove("back")
         document.body.classList.add("backb")
@@ -29,7 +30,7 @@ function cambiar() {
         document.querySelector("header").classList.add("black")
         btn.classList.remove("move")
         btn.classList.add("backbtn")
-        count = false
+        darkMode = false
     }
 }
 
@@ -94,4 +95,14 @@ function copy() {
     toast.innerHTML = `<p class="anim">Copiado con éxito</p>`
 
 
+}
+
+function menu() {
+    if (menuMode === false) {
+        document.querySelector("header").classList.add("menu")
+        menuMode = true
+    } else {
+        document.querySelector("header").classList.remove("menu")
+        menuMode = false
+    }
 }

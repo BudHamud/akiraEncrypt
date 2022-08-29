@@ -203,9 +203,14 @@ footer {
     background-color: black;
     color: white;
 }
-/* Hacer menú hamburguesa con esta clase */
-.icon {
+
+.fa-bars {
     display: none;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
 }
 
 @media (max-width: 850px) {
@@ -213,8 +218,12 @@ footer {
         flex-direction: column;
         display: none;
     }
-    .icon {
+    .fa-bars {
         display: block;
+        color: white;
+        position:absolute;
+        top: 20px;
+        left: 20px;
     }
     main {
         flex-direction: column;
@@ -223,7 +232,13 @@ footer {
         width: 250px;
         height: 150px;
     }
-    .anim {
+    /* .anim {
         position: relative;
+    } */
+    .akimode {
+        height: 15px;
+    }
+    #mode {
+        bottom: 12px;
     }
 }
