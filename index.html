@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-        <img src="img/logov2.png" alt="" />
+        <img src="img/logov2.png" alt="Logo de Akira Encrypt" />
         <h3>Akira あきら Encrypt</h3>
 
         <div class="akimode">
@@ -24,12 +24,12 @@
     <i onclick="menu()" class="fa-solid fa-bars"></i>
     <main>
       <article>
-        <textarea name="text" id="text"></textarea>
+        <textarea name="text" id="text" aria-label="Texto a encriptar" placeholder="escribe tu texto en minúsculas..."></textarea>
         <button onclick="encript()">Encriptar</button>
         <button onclick="des()">Desencriptar</button>
       </article>
       <div class="copyblock">
-        <textarea disabled id="show"></textarea>
+        <textarea disabled id="show" aria-label="Resultado"></textarea>
         <button onclick="copy()">
           Copiar <i class="fa-solid fa-copy"></i>
         </button>

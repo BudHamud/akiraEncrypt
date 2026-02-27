@@ -4,10 +4,14 @@ let btn = document.getElementById("mode")
 let toast = document.getElementById("toast")
 let darkMode = false
 let menuMode = false
-const soloLetras ='^[a-z !ñ]+$';
+const soloLetras = /^[a-z ñ]+$/
 
 function borrar() {
-    show.innerHTML = ""
+    show.value = ""
+}
+
+function mostrarError(mensaje) {
+    toast.innerHTML = `<p class="anim">${mensaje}</p>`
 }
 
 function cambiar() {
@@ -35,55 +39,55 @@ function cambiar() {
 }
 
 function encript() {
-    let texto = text.value;
-    
-    if(texto.match(soloLetras)!=null){
-      let palabras = texto.split(' ');
-      let nuevasPalabras = [];
-      
-      for (let palabra of palabras) {
-        palabra = palabra.replaceAll('e','epe');
-        palabra = palabra.replaceAll('i','ipi');
-        palabra = palabra.replaceAll('a','apa');
-        palabra = palabra.replaceAll('o','opo');
-        palabra = palabra.replaceAll('u','upu');      
-        
-        nuevasPalabras.push(palabra);    
-      }
-  
-      const resultado = nuevasPalabras.join(' ');
-      
-      show.innerHTML = resultado;
+    let texto = text.value.trim()
+
+    if (soloLetras.test(texto)) {
+        let palabras = texto.split(' ')
+        let nuevasPalabras = []
+
+        for (let palabra of palabras) {
+            palabra = palabra.replaceAll('e', 'epe')
+            palabra = palabra.replaceAll('i', 'ipi')
+            palabra = palabra.replaceAll('a', 'apa')
+            palabra = palabra.replaceAll('o', 'opo')
+            palabra = palabra.replaceAll('u', 'upu')
+
+            nuevasPalabras.push(palabra)
+        }
+
+        const resultado = nuevasPalabras.join(' ')
+
+        show.value = resultado
     } else {
-      alert('Ingrese letras minúsculas, sin acentos');
-      return;
-    }  
-  }
-  
+        mostrarError('Ingrese letras minúsculas, sin acentos')
+        return
+    }
+}
+
 function des() {
-    let texto = text.value;
-    
-    if(texto.match(soloLetras)!=null){
-      let palabras = texto.split(' ');
-      let nuevasPalabras = [];
-      
-      for (let palabra of palabras) {
-        palabra = palabra.replaceAll('epe','e');
-        palabra = palabra.replaceAll('ipi','i');
-        palabra = palabra.replaceAll('apa','a');
-        palabra = palabra.replaceAll('opo','o');
-        palabra = palabra.replaceAll('upu','u');      
-        
-        nuevasPalabras.push(palabra);    
-      }
-  
-      const resultado = nuevasPalabras.join(' ');
-      
-      show.innerHTML = resultado;
+    let texto = text.value.trim()
+
+    if (soloLetras.test(texto)) {
+        let palabras = texto.split(' ')
+        let nuevasPalabras = []
+
+        for (let palabra of palabras) {
+            palabra = palabra.replaceAll('epe', 'e')
+            palabra = palabra.replaceAll('ipi', 'i')
+            palabra = palabra.replaceAll('apa', 'a')
+            palabra = palabra.replaceAll('opo', 'o')
+            palabra = palabra.replaceAll('upu', 'u')
+
+            nuevasPalabras.push(palabra)
+        }
+
+        const resultado = nuevasPalabras.join(' ')
+
+        show.value = resultado
     } else {
-      mostrarError('Ingrese letras minúsculas, sin acentos');
-      return;
-    }  
+        mostrarError('Ingrese letras minúsculas, sin acentos')
+        return
+    }
 }
 
 function copy() {
@@ -93,8 +97,6 @@ function copy() {
     navigator.clipboard.writeText(show.value)
 
     toast.innerHTML = `<p class="anim">Copiado con éxito</p>`
-
-
 }
 
 function menu() {
